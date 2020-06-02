@@ -9,13 +9,14 @@
 #ifndef MASTER_H_
 #define MASTER_H_
 
-#define F_CPU 1843200UL
-
+//#define F_CPU 1843200UL
+#define F_CPU 3686400UL
+//#define F_CPU 6000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-#define BAUD_RS_485 19200
+#define BAUD_RS_485 9600
 #define BAUD_RS_232 9600
 #define UBRR_CALC_RS_485 (F_CPU/(BAUD_RS_485*16L) - 1)
 #define UBRR_CALC_RS_232 (F_CPU/(BAUD_RS_232*16L) - 1)
@@ -24,8 +25,8 @@
 #define BUF_MASK_RX (BUF_SIZE_RX - 1)
 #define BUF_MASK_TX (BUF_SIZE_TX - 1)
 
-#define COMMAND_WRITE 'w'//0xA1
-#define COMMAND_READ  'r'//0xB1
+#define COMMAND_WRITE 0xA1
+#define COMMAND_READ  0xB1
 
 #define EN_m PB1
 #define MAX_COUNT_WRITE_BYTES 8
