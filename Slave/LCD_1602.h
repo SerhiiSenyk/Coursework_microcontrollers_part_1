@@ -19,9 +19,10 @@
 #ifndef LCD_1602_H_
 #define LCD_1602_H_
 
- 
-#define F_CPU 1843200UL
-//#define F_CPU 4000000UL
+
+//#define F_CPU 1843200UL
+#define F_CPU 3686400UL
+//#define F_CPU 6000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/pgmspace.h>
@@ -51,7 +52,7 @@ void LCD_WriteStr(volatile char *str);
 void LCD_WriteStrPROGMEM(volatile char *str);
 void LCD_EnabledCursor();
 void LCD_DisabledCursor();
-void LCD_clearRow();
+void LCD_clearRow(uint8_t);
 
 
 #endif /* LCD_1602_H_ */

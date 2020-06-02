@@ -9,20 +9,21 @@
 #ifndef RS_485_SLAVE_
 #define RS_485_SLAVE_
 
-#define F_CPU 1843200UL
-//#define F_CPU 4000000UL
+//#define F_CPU 1843200UL
+#define F_CPU 3686400UL
+//#define F_CPU 6000000UL
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
-#define BAUD_RS_485 19200
+#define BAUD_RS_485 9600
 #define UBRR_CALC_RS_485 (F_CPU/(BAUD_RS_485*16L) - 1)
 #define BUF_SIZE_RX 64
 #define BUF_SIZE_TX 64
 #define BUF_MASK_RX (BUF_SIZE_RX - 1)
 #define BUF_MASK_TX (BUF_SIZE_TX - 1)
-#define COMMAND_WRITE 'w'//0xA1
-#define COMMAND_READ  'r'//0xB1
+#define COMMAND_WRITE 0xA1
+#define COMMAND_READ  0xB1
 #define ENABLE PD2
 #define SIZE_CRC_BLOCK 4
 extern volatile int8_t bufRX[BUF_SIZE_RX];

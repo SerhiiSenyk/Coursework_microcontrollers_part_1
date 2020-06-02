@@ -20,8 +20,10 @@
 #define DDR_MOTORS DDRC
 #define PORT_MOTORS PORTC
 
-extern volatile int16_t current_positionA, input_positionA, current_positionB, input_positionB;
-uint8_t mode_motorA, mode_motorB, motor_flag;
+volatile int16_t current_positionA, input_positionA, current_positionB, input_positionB;
+uint8_t mode_motorA, mode_motorB, speed_prescalar_A, speed_prescalar_B;
+volatile uint8_t motor_flag;
+
 void Unipolar_Setup();
 ISR(TIMER0_COMP_vect);
 

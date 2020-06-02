@@ -5,6 +5,7 @@
  *  Author: Serhii Senyk
  */ 
 #include "LCD_1602.h"
+
 void LCD_Setup()
 {
 	_delay_ms(40);
@@ -126,9 +127,9 @@ void LCD_WriteStrPROGMEM(volatile char *str)
 	}
 }
 
-void LCD_clearRow()
+void LCD_clearRow(uint8_t n)
 {
-	for(int i = 0;i < 8; ++i){
+	while(n--){
 		LCD_writeSymbol(' ');
 	}
 }
